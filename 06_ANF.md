@@ -142,3 +142,5 @@ Obviously we want to normalize all the parts. Obviously.
 We want each of our bindings to do one step (primitive operation). However, `if`s are conditioning based on the argument. Therefore, for it to make any sense, the condition must be an *immediate*. Only the condition is eagerly evaluated. Only the arms are lazily evaluated.
 
 What about the bodies? It's straightforward way to say that we just want to normalize the bodies... but what about nested ifs? If we naively translate `if`s, there will be a lot of code duplication.
+
+We cheat by having an additional layer called `let`able that includes ifs. This is ugly, but it saves us from exponential code duplication, so we'll take it.
