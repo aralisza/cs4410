@@ -172,3 +172,7 @@ Tail calls turns your recursion into `while` loops.
 `Printstack` is just printing those stack diagrams. The challenge is stopping. A hack is to declare a pointer in C and then the first thing the assembly does is save EBP to that pointer.
 
 **Deforestation** transforms syntax trees to syntax trees that convert into better assembly. (because it's eliminating data trees)
+
+## Why don't a lot of languages have tail calls?
+
+Because the stack trace is exposed as a value that can be used to make decisions in your program. For example, Java security monitor. You can also just throw an exception and catch the error and regex on that string.
