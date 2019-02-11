@@ -117,7 +117,7 @@ Solution1: make the user supply type annotations everywhere. Works great except 
 
 Fortunately, we can actually do some form of guess and check.
 
-### Hindley Milner
+### Hindley-Milner
 
 ```txt
 let f g h x =  h(g(h(x)))
@@ -149,3 +149,7 @@ f: ∀theta, chi (theta -> chi) -> (chi -> theta) -> chi -> theta
 ```
 
 We allow for alls only on the very outside.
+
+But when we do a type judgement, we still need to know a type not a type schema. To fix this, we just provide it with any new name. Because it will work for all, it should  work with any one.
+
+The good thing a bout Hindley-Milner is that it does at little as possible at each step.
